@@ -1,4 +1,4 @@
-import { Salesman } from './../salesmen/salesman';
+import { Salesman } from '../salesmen/salesman';
 import { Component, OnInit } from '@angular/core';
 import { SalesmanService } from '../salesman.service';
 
@@ -8,6 +8,7 @@ import { SalesmanService } from '../salesman.service';
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
 })
+  
 export class DashboardComponent implements OnInit {
   salesmen: Salesman[] = [];
 

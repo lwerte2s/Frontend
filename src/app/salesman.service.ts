@@ -18,20 +18,23 @@ export class SalesmanService {
   ) { }
 
   getSalesmen(): Observable<Salesman[]> {
-  /** GET Salesman from the server */
-    this.messageService.add('SalesmanService: fetched salesmen');
-    return this.http.get<Salesman[]>(this.salesmanUrl);
+    /** GET Salesman from the server */
+    //this.messageService.add('SalesmanService: fetched salesmen');
+    //return this.http.get<Salesman[]>(this.salesmanUrl);
+    const salesmen = of(SALESMEN);
+    this.messageService.add('HeroService: fetched heroes');
+    return salesmen;
   }
 
   getSalesman(id: number): Observable<Salesman> {
-  // TODO: send the message _after_ fetching the salesman
-  this.messageService.add(`SalesmanService: fetched saleman id=${id}`);
-  return of(SALESMEN.find(salesman => salesman.id === id));
+    // TODO: send the message _after_ fetching the salesman
+    this.messageService.add(`SalesmanService: fetched saleman id=${id}`);
+    return of(SALESMEN.find(salesman => salesman.id === id));
   }
 
-/** Log a SalesmanService message with the MessageService */
-private log(message: string) {
-  this.messageService.add(`HeroService: ${message}`);
-}
+  /** Log a SalesmanService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
+  }
   
 }
