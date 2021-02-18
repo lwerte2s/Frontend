@@ -20,7 +20,8 @@ export class SalesmenComponent implements OnInit {
 
   getSalesmen(): void {
     this.salesmanService.getSalesmen()
-    .subscribe( salesmen => this.salesmen = salesmen );
+      .subscribe(salesmen => this.salesmen = salesmen);
+    
   }
 
 }

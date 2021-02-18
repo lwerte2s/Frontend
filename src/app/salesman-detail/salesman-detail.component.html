@@ -1,6 +1,28 @@
-<div *ngIf="salesman">
+<div *ngIf="salesmen">
 
-    <h2>{{salesman.name | uppercase}}</h2>
-    <p>id: {{salesman.id}}</p>
+
     <button (click)="goBack()">go back</button>
+
+    <div *ngFor="let item of salesmen">
+        <h2>{{item.id}} : {{item.name | uppercase}} ,Department:{{item.department}}</h2>
+         <a routerLink="/bonus/{{item.id}}" *ngIf="item">New Bonus</a>
+    </div>
+
+    
+   
+
+    <ul class="records">
+        <li *ngFor="let record of records"
+            [class.selected]="record === selectedRecord"
+            (click)="onSelect(record)">
+            {{record.year}}
+        </li>
+    </ul>
+
+    
+
+    <app-records [record]="selectedRecord"></app-records>
+    <app-orders [record]="selectedRecord"></app-orders>
+
+    
 </div>

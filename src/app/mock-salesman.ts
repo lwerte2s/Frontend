@@ -1,5 +1,5 @@
 import { Salesman } from './salesmen/salesman';
-
+/*
 export const SALESMEN: Salesman[] = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
@@ -12,3 +12,5 @@ export const SALESMEN: Salesman[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ]
+*/
+export const SALESMEN: Salesman[] = []

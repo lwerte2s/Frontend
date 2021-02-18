@@ -1,0 +1,31 @@
+<div *ngIf="orders">
+
+    <app-records [record]="record"></app-records>
+
+    <table>
+        <caption>Orders Evaluation {{getCurrentYear()}}</caption>
+        <tr>
+            <th>Client</th>
+            <th>Client Ranking</th>
+            <th>Name of Product</th>
+            <th>Items</th>
+            <th>Bonus</th>
+        </tr>
+        <tr *ngFor="let order of orders">
+            <td>{{order.customer}}</td>
+            <td>{{order.accountRating}}</td>
+            <td *ngFor="let o of order.orders">{{o.product}}</td>
+            <td *ngFor="let o of order.orders">{{o.quantity}}</td>
+            <td *ngFor="let o of order.orders">{{o.bonus}}</td> 
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{computeOrderBonus()}}</td>
+        </tr>
+    </table>
+
+    <h2>Total Bonus: {{computeTotalBonus()}}</h2>
+</div>

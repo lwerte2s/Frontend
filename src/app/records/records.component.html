@@ -1,0 +1,27 @@
+<div *ngIf="record">
+
+<table>
+    <caption>Social Performance Evaluation {{record.year}}</caption>
+    <tr>
+        <th>Description</th>
+        <th>Target Value</th>
+        <th>Actual Value</th>
+        <th>Bonus</th>
+    </tr>
+    <tr *ngFor="let goal of record.goals">
+        <td>{{goal.description}}</td>
+        <td>{{goal.targetValue}}</td>
+        <td>{{goal.actualValue}}</td>
+        <td>{{goal.bonus}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{computeTotalBonus()}}</td>
+    </tr>
+
+</table>
+
+</div>
+

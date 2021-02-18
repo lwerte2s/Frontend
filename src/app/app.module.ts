@@ -7,6 +7,8 @@ import { SalesmanDetailComponent } from './salesman-detail/salesman-detail.compo
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RecordsComponent } from './records/records.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SalesmenComponent,
     SalesmanDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    RecordsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
