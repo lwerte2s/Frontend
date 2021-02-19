@@ -5,13 +5,12 @@ import { Salesman } from './../salesmen/salesman';
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 @Component({
-  selector: 'app-salesman-detail',
-  templateUrl: './salesman-detail.component.html',
-  styleUrls: ['./salesman-detail.component.css']
+  selector: 'app-hr-view',
+  templateUrl: './hr-view.component.html',
+  styleUrls: ['./hr-view.component.css']
 })
-export class SalesmanDetailComponent implements OnInit, OnChanges {
+export class HrViewComponent implements OnInit {
 
   salesmen: Salesman[];
   records: Record[];
@@ -68,6 +67,5 @@ export class SalesmanDetailComponent implements OnInit, OnChanges {
   saveRemarks(remarks: string) {
     this.recordService.saveRemarks(this.thisYearsRecord.salesmanId, this.thisYearsRecord.evaluationId, remarks);
   }
-
 
 }

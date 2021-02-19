@@ -6,14 +6,15 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-@Component({
-  selector: 'app-salesman-detail',
-  templateUrl: './salesman-detail.component.html',
-  styleUrls: ['./salesman-detail.component.css']
-})
-export class SalesmanDetailComponent implements OnInit, OnChanges {
 
-  salesmen: Salesman[];
+@Component({
+  selector: 'app-ceo-view',
+  templateUrl: './ceo-view.component.html',
+  styleUrls: ['./ceo-view.component.css']
+})
+export class CeoViewComponent implements OnInit {
+
+salesmen: Salesman[];
   records: Record[];
   selectedRecord: Record;
   thisYearsRecord: Record;
@@ -68,6 +69,5 @@ export class SalesmanDetailComponent implements OnInit, OnChanges {
   saveRemarks(remarks: string) {
     this.recordService.saveRemarks(this.thisYearsRecord.salesmanId, this.thisYearsRecord.evaluationId, remarks);
   }
-
 
 }

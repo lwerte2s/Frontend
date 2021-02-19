@@ -1,15 +1,18 @@
-import { SalesmanDetailComponent } from './salesman-detail/salesman-detail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { CeoViewComponent } from './ceo-view/ceo-view.component';
+import { SalesmanViewComponent } from './salesman-view/salesman-view.component';
+import { SelectViewComponent } from './select-view/select-view.component';
 import { SalesmenComponent } from './salesmen/salesmen.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/select', pathMatch: 'full' },
   { path: 'salesmen', component: SalesmenComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: SalesmanDetailComponent },
+  { path: 'select', component: SelectViewComponent },
+  { path: 'salesman-view/:id', component: SalesmanViewComponent },
+  { path: 'ceo-view/:id', component: CeoViewComponent },
+  { path: 'hr-view/:id', component: CeoViewComponent },
 ];
 
 @NgModule({

@@ -1,7 +1,5 @@
 <div *ngIf="orders">
 
-    <app-records [record]="record"></app-records>
-
     <table>
         <caption>Orders Evaluation {{getCurrentYear()}}</caption>
         <tr>
@@ -28,4 +26,6 @@
     </table>
 
     <h2>Total Bonus: {{computeTotalBonus()}}</h2>
+    <button *ngIf="ohrmId" (click)=uploadBonusToOHRM()>Approve Bonus</button>
+
 </div>

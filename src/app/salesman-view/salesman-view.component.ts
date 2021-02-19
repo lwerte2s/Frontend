@@ -7,11 +7,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-salesman-detail',
-  templateUrl: './salesman-detail.component.html',
-  styleUrls: ['./salesman-detail.component.css']
+  selector: 'app-salesman-view',
+  templateUrl: './salesman-view.component.html',
+  styleUrls: ['./salesman-view.component.css']
 })
-export class SalesmanDetailComponent implements OnInit, OnChanges {
+export class SalesmanViewComponent implements OnInit {
 
   salesmen: Salesman[];
   records: Record[];
@@ -63,10 +63,6 @@ export class SalesmanDetailComponent implements OnInit, OnChanges {
 
   onSelect(record: Record) {
     this.selectedRecord = record;
-  }
-
-  saveRemarks(remarks: string) {
-    this.recordService.saveRemarks(this.thisYearsRecord.salesmanId, this.thisYearsRecord.evaluationId, remarks);
   }
 
 

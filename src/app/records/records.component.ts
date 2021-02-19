@@ -13,6 +13,7 @@ import { Record } from './record';
 export class RecordsComponent implements OnInit {
 
   @Input() record: Record;
+  @Input() remarksVisibility: boolean;
 
   constructor(
     private recordService: RecordService,

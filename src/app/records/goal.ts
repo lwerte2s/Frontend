@@ -1,5 +1,5 @@
 export interface Goal {
-    discription: string,
+    description: string,
     targetValue: number,
     actualValue: number,
     bonus: number

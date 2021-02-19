@@ -9,30 +9,28 @@
 
 
     <app-records [record]="thisYearsRecord"></app-records>
-    <app-orders [record]="thisYearsRecord" [ohrmId]="salesmen[0].ohrmId" ></app-orders>
+    <app-orders [record]="thisYearsRecord" [ohrmId]="salesmen[0].ohrmId"></app-orders>
 
-    <form *ngIf="thisYearsRecord" >
+    <form *ngIf="thisYearsRecord">
         <fieldset>
-        <legend name="">Remarks</legend>     
-        <textarea name="remarks" id="remarks" #remarks cols="80" rows="5">{{thisYearsRecord.remarks}}</textarea>
-        <br>
-        <button (click)="saveRemarks(remarks.value)">Save Remarks</button>
+            <legend name="">Remarks</legend>
+            <textarea name="remarks" id="remarks" #remarks cols="80" rows="5">{{thisYearsRecord.remarks}}</textarea>
+            <br>
+            <button (click)="saveRemarks(remarks.value)">Save Remarks</button>
         </fieldset>
     </form>
 
-    
-    
+
+
 
 
     <h2>Social Performance recent years:</h2>
     <ul class="records">
-        <li *ngFor="let record of records"
-            [class.selected]="record === selectedRecord"
-            (click)="onSelect(record)">
+        <li *ngFor="let record of records" [class.selected]="record === selectedRecord" (click)="onSelect(record)">
             {{record.year}}
         </li>
     </ul>
 
     <app-records [record]="selectedRecord" [remarksVisibility]="true"></app-records>
-    
+
 </div>

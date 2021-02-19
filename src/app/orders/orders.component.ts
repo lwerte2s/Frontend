@@ -4,6 +4,7 @@ import { Record } from '../records/record';
 import { Component, Input, OnChanges } from '@angular/core';
 import { Order } from './order'
 
+
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -12,7 +13,9 @@ import { Order } from './order'
 export class OrdersComponent implements OnChanges {
 
   @Input() record: Record;
-  orders : Order[];
+  @Input() ohrmId: number;
+  orders: Order[];
+  
 
   constructor(private recordService: RecordService,
               private route: ActivatedRoute,) { }
@@ -25,7 +28,7 @@ export class OrdersComponent implements OnChanges {
   }
 
   getOrders(): void {
-      this.recordService.getOrders( this.record.salesmanId).subscribe(orders => this.orders = orders ); 
+    this.recordService.getOrders(this.record.salesmanId).subscribe(orders =>  this.orders = orders ); 
     
   }
 
@@ -53,6 +56,10 @@ export class OrdersComponent implements OnChanges {
 
   getCurrentYear(): number {
     return new Date().getFullYear();
+  }
+
+  uploadBonusToOHRM(): void {
+    this.recordService.uploadBonusToOHRM(this.ohrmId , this.record.year, this.computeTotalBonus());
   }
 
 }
