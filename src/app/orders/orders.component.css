@@ -1,0 +1,28 @@
+
+#approveBonus {
+    padding: 5px 30px;
+    background-color: red;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 4px;
+    border: 1.5px solid black;
+}
+
+#approveBonus:hover {
+    background-color: rgb(136, 0, 0);
+    cursor: pointer;
+}
+
+#approveBonus:focus {
+    background-color: rgb(0, 216, 54);
+}
+
+.bonus {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+
+
+

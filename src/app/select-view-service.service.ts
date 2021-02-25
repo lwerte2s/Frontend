@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { Injectable } from '@angular/core';
 
 @Injectable({

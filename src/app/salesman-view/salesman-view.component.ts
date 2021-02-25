@@ -15,7 +15,6 @@ export class SalesmanViewComponent implements OnInit {
 
   salesmen: Salesman[];
   records: Record[];
-  selectedRecord: Record;
   thisYearsRecord: Record;
 
   constructor(
@@ -60,10 +59,5 @@ export class SalesmanViewComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
-  onSelect(record: Record) {
-    this.selectedRecord = record;
-  }
-
 
 }

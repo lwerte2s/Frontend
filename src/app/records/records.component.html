@@ -1,4 +1,4 @@
-<div *ngIf="record">
+<div id="all" *ngIf="record">
 
 <table>
     <caption>Social Performance Evaluation {{record.year}}</caption>
@@ -18,13 +18,15 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>{{computeTotalBonus()}}</td>
+        <td id="total">{{computeTotalBonus()}}</td>
     </tr>
 
 </table>
 
+<div *ngIf="remarksVisibility === true" class="remarks">
+    <p class="remarkstext"><span id="remarksheader">Remarks:</span><br>{{record.remarks}}</p>
+</div>
 
-<p *ngIf="remarksVisibility === true">{{record.remarks}}</p>
 
 </div>
 

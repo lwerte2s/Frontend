@@ -1,8 +1,7 @@
-import { ActivatedRoute } from '@angular/router';
-import { RecordService } from './../record.service';
+import { RecordService } from '../record.service';
 import { Record } from '../records/record';
 import { Component, Input, OnChanges } from '@angular/core';
-import { Order } from './order'
+import { Order } from './order';
 
 
 @Component({
@@ -15,10 +14,9 @@ export class OrdersComponent implements OnChanges {
   @Input() record: Record;
   @Input() ohrmId: number;
   orders: Order[];
-  
 
-  constructor(private recordService: RecordService,
-              private route: ActivatedRoute,) { }
+  constructor(private recordService: RecordService
+              ) { }
 
 
   ngOnChanges(): void {
@@ -28,29 +26,28 @@ export class OrdersComponent implements OnChanges {
   }
 
   getOrders(): void {
-    this.recordService.getOrders(this.record.salesmanId).subscribe(orders =>  this.orders = orders ); 
-    
+    this.recordService.getOrders(this.record.salesmanId).subscribe(orders =>  this.orders = orders );
   }
 
-  computeOrderBonus() {
+  computeOrderBonus(): number {
     let orderBonus = 0;
-    for (let order of this.orders) {
-      for (let o of order.orders) {
+    for (const order of this.orders) {
+      for (const o of order.orders) {
         orderBonus += o.bonus;
       }
     }
     return orderBonus;
   }
 
-  computeSocialBonus() {
+  computeSocialBonus(): number {
     let socialBonus = 0;
-    for (let goal of this.record.goals) {
+    for (const goal of this.record.goals) {
       socialBonus += goal.bonus;
     }
     return socialBonus;
   }
 
-  computeTotalBonus() {
+  computeTotalBonus(): number {
     return this.computeOrderBonus() + this.computeSocialBonus();
   }
 
@@ -59,7 +56,11 @@ export class OrdersComponent implements OnChanges {
   }
 
   uploadBonusToOHRM(): void {
-    this.recordService.uploadBonusToOHRM(this.ohrmId , this.record.year, this.computeTotalBonus());
+    this.recordService.uploadBonusToOHRM(this.ohrmId, this.record.year, this.computeTotalBonus())
+      .subscribe(res => {
+        console.log(res);
+        (res.hasOwnProperty('success')) ? alert("Saved successfully!") : alert("Something went wrong.");
+      });
   }
 
 }

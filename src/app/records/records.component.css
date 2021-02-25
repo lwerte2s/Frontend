@@ -1,0 +1,15 @@
+
+.remarks {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#remarksheader {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.remarkstext {
+    font-style: italic;
+    margin-bottom: 20px;
+    background-color: rgb(235, 235, 235);
+}

@@ -1,3 +1,4 @@
+import { HrViewComponent } from './hr-view/hr-view.component';
 import { CeoViewComponent } from './ceo-view/ceo-view.component';
 import { SalesmanViewComponent } from './salesman-view/salesman-view.component';
 import { SelectViewComponent } from './select-view/select-view.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'select', component: SelectViewComponent },
   { path: 'salesman-view/:id', component: SalesmanViewComponent },
   { path: 'ceo-view/:id', component: CeoViewComponent },
-  { path: 'hr-view/:id', component: CeoViewComponent },
+  { path: 'hr-view/:id', component: HrViewComponent },
 ];
 
 @NgModule({

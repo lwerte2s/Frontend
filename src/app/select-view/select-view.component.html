@@ -1,5 +1,20 @@
-<h1>Log in as:</h1>
 
-<h2 (click)="changeSelectedView('ceo-view')">CEO</h2>
-<h2 (click)="changeSelectedView('hr-view')">HR</h2>
-<h2 (click)="changeSelectedView('salesman-view')">Salesman</h2>
+<div>
+    <ul>
+    <li class="link">
+        <h1>Log in as:</h1>
+    </li>
+    <li class="link">
+        <a (click)="changeSelectedView('ceo-view')" routerLink="/salesmen">CEO</a>
+    </li>
+    <li class="link">
+        <a (click)="changeSelectedView('hr-view')" routerLink="/salesmen">HR</a>
+    </li>
+    <li class="link">
+        <a (click)="changeSelectedView('salesman-view')" routerLink="/salesmen">Salesman</a>
+    </li>
+</ul>
+
+</div>
+
+

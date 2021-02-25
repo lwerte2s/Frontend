@@ -1,25 +1,12 @@
 <div *ngIf="salesmen">
 
+    <br>
+    <button id="goback" (click)="goBack()">&#8678;</button>
 
-    <button (click)="goBack()">go back</button>
-
-    <div *ngFor="let item of salesmen">
-        <h2>{{item.id}} : {{item.name | uppercase}} ,Department:{{item.department}}</h2>
-    </div>
-
-
+    <app-salesman-details [salesman]="salesmen[0]"></app-salesman-details>
     <app-records [record]="thisYearsRecord"></app-records>
     <app-orders [record]="thisYearsRecord"></app-orders>
-
-
-
-    <h2>Social Performance recent years:</h2>
-    <ul class="records">
-        <li *ngFor="let record of records" [class.selected]="record === selectedRecord" (click)="onSelect(record)">
-            {{record.year}}
-        </li>
-    </ul>
-
+    <app-social-performance-list [records]="records"></app-social-performance-list>
     <app-records [record]="selectedRecord" [remarksVisibility]="true"></app-records>
 
 </div>

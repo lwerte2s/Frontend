@@ -1,4 +1,4 @@
-<div *ngIf="orders">
+<div id="all" *ngIf="orders">
 
     <table>
         <caption>Orders Evaluation {{getCurrentYear()}}</caption>
@@ -12,20 +12,39 @@
         <tr *ngFor="let order of orders">
             <td>{{order.customer}}</td>
             <td>{{order.accountRating}}</td>
-            <td *ngFor="let o of order.orders">{{o.product}}</td>
-            <td *ngFor="let o of order.orders">{{o.quantity}}</td>
-            <td *ngFor="let o of order.orders">{{o.bonus}}</td> 
+            <td>
+            <div *ngFor="let o of order.orders">
+                {{o.product}}
+            </div>
+            </td>
+            <td>
+           <div *ngFor="let o of order.orders">
+                {{o.quantity}}
+            </div>
+            </td> 
+            <td>
+            <div *ngFor="let o of order.orders">
+                {{o.bonus}}
+            </div>
+            </td>     
+            
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td>{{computeOrderBonus()}}</td>
+            <td id="total">{{computeOrderBonus()}}</td>
         </tr>
     </table>
 
-    <h2>Total Bonus: {{computeTotalBonus()}}</h2>
-    <button *ngIf="ohrmId" (click)=uploadBonusToOHRM()>Approve Bonus</button>
+    <div class="bonus">
+        <h2>Total Bonus: {{computeTotalBonus()}}€</h2>
+        <div>
+           <button id="approveBonus" *ngIf="ohrmId" (click)=uploadBonusToOHRM()>Approve Bonus</button> 
+        </div>
+        
+    </div>
+    
 
 </div>

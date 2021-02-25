@@ -3,7 +3,8 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 100%;
+  min-width: 250px;
 }
 .salesman li {
   position: relative;
@@ -26,7 +27,7 @@
   text-decoration: none;
   position: relative;
   display: block;
-  width: 250px;
+  width: 100%;
 }
 
 .salesman a:hover {
@@ -48,4 +49,16 @@
   text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+div {
+  width: 50%;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  border-bottom: 2px solid black;
+  min-width: 250px;
+  font-weight: normal;
 }

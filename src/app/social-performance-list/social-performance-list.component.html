@@ -1,0 +1,13 @@
+
+<div class="font">
+    <p id="all">Social Performance recent years:</p>
+    <div id="flex"> 
+        <ul class="records">
+            <li *ngFor="let record of records" [class.selected]="record === selectedRecord" (click)="onSelect(record)">
+                {{record.year}}
+            </li>
+        </ul>
+    </div>
+    <app-records [record]="selectedRecord" [remarksVisibility]="true"></app-records>
+    
+</div>

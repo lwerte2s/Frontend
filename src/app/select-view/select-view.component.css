@@ -1,0 +1,44 @@
+
+.link {
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.link a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #4485a3;
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+}
+
+.link h1 {
+    color: black;
+    border-bottom: 2px solid rgb(0, 225, 255);
+    font-weight: normal;
+}
+
+.link a:visited, a:link {
+  color: white;
+}
+.link a:hover {
+  color: rgb(0, 225, 255);
+  background-color: #cfd8dc;
+}
+.link a.active {
+  color:rgb(0, 225, 255);
+}
+
+
+ul {
+    list-style: none;
+}
+
+div {
+    margin: auto;
+    width: 50%;
+}
+

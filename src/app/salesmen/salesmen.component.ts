@@ -1,6 +1,5 @@
-import { SelectViewServiceService } from './../select-view-service.service';
-import { MessageService } from './../message.service';
-import { SalesmanService } from './../salesman.service';
+import { SelectViewServiceService } from '../select-view-service.service';
+import { SalesmanService } from '../salesman.service';
 import { Salesman } from './salesman';
 import { Component, OnInit } from '@angular/core';
 
@@ -15,7 +14,6 @@ export class SalesmenComponent implements OnInit {
 
   constructor(
     private salesmanService: SalesmanService,
-    private messageService: MessageService,
     private selectViewService: SelectViewServiceService
   ) { }
 
@@ -26,10 +24,9 @@ export class SalesmenComponent implements OnInit {
   getSalesmen(): void {
     this.salesmanService.getSalesmen()
       .subscribe(salesmen => this.salesmen = salesmen);
-    
   }
 
-  getSelectedView():string {
+  getSelectedView(): string {
     return this.selectViewService.getSelectedView();
   }
 

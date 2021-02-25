@@ -2,7 +2,7 @@ import { Record } from './../records/record';
 import { RecordService } from './../record.service';
 import { SalesmanService } from './../salesman.service';
 import { Salesman } from './../salesmen/salesman';
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 @Component({
@@ -14,7 +14,6 @@ export class HrViewComponent implements OnInit {
 
   salesmen: Salesman[];
   records: Record[];
-  selectedRecord: Record;
   thisYearsRecord: Record;
 
   constructor(
@@ -55,17 +54,9 @@ export class HrViewComponent implements OnInit {
     }
   }
     
-
   goBack(): void {
     this.location.back();
   }
 
-  onSelect(record: Record) {
-    this.selectedRecord = record;
-  }
-
-  saveRemarks(remarks: string) {
-    this.recordService.saveRemarks(this.thisYearsRecord.salesmanId, this.thisYearsRecord.evaluationId, remarks);
-  }
 
 }

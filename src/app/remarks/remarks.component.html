@@ -1,0 +1,11 @@
+<div id="all">
+    <form *ngIf="record">
+        <fieldset>
+            <legend name="">Remarks</legend>
+            <textarea name="remarks" id="remarks" #remarks cols="80" rows="5">{{record.remarks}}</textarea>
+            <br>
+            <button (click)="saveRemarks(remarks.value)">Save Remarks</button>
+        </fieldset>
+    </form>
+</div>
+

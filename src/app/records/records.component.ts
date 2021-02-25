@@ -1,7 +1,5 @@
-import { RecordService } from './../record.service';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+
+import { Component, Input } from '@angular/core';
 import { Record } from './record';
 
 
@@ -10,24 +8,16 @@ import { Record } from './record';
   templateUrl: './records.component.html',
   styleUrls: ['./records.component.css']
 })
-export class RecordsComponent implements OnInit {
+export class RecordsComponent  {
 
   @Input() record: Record;
   @Input() remarksVisibility: boolean;
 
-  constructor(
-    private recordService: RecordService,
-    private route: ActivatedRoute,
-    private location: Location,
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
-
-
-  computeTotalBonus() {
+  computeTotalBonus(): number {
     let totalBonus = 0;
-    for (let goal of this.record.goals) {
+    for (const goal of this.record.goals) {
       totalBonus += goal.bonus;
     }
     return totalBonus;
