@@ -1,6 +1,6 @@
 export interface Goal {
-    description: string,
-    targetValue: number,
-    actualValue: number,
-    bonus: number
+    description: string;
+    targetValue: number;
+    actualValue: number;
+    bonus: number;
 }

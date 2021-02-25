@@ -1,7 +1,7 @@
-import { Record } from './../records/record';
-import { RecordService } from './../record.service';
-import { SalesmanService } from './../salesman.service';
-import { Salesman } from './../salesmen/salesman';
+import { Record } from '../records/record';
+import { RecordService } from '../record.service';
+import { SalesmanService } from '../salesman.service';
+import { Salesman } from '../salesmen/salesman';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -28,35 +28,36 @@ export class HrViewComponent implements OnInit {
     this.getRecords();
   }
 
-  ngOnChanges(): void {
-    if (this.records) {
-      
-    }
-  }
 
   getSalesman(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.salesmanService.getSalesmen().subscribe(salesmen => this.salesmen = salesmen.filter(data => String(data.id) === id ) ); 
+    this.salesmanService.getSalesmen().subscribe(salesmen => this.salesmen = salesmen.filter(data => String(data.id) === id ) );
   }
 
   getRecords(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.recordService.getEvaluationRecords(id).subscribe(records => { this.records = records, this.getThisYearsRecord() });
+    this.recordService.getEvaluationRecords(id).subscribe(records => { this.records = records; this.getThisYearsRecord(); });
   }
 
   getThisYearsRecord(): void {
-    for(let record of this.records) {
+    for (const record of this.records) {
       if (record.year === new Date().getFullYear()) {
         this.thisYearsRecord = record;
       } else {
-        this.thisYearsRecord = { salesmanId: this.records[0].salesmanId, evaluationId: 0 , year: new Date().getFullYear(), goals: [{description:'no data available', targetValue:0, actualValue:0, bonus:0}] };
+        this.thisYearsRecord = {
+          salesmanId: this.records[0].salesmanId,
+          evaluationId: 0 ,
+          year: new Date().getFullYear(),
+          goals: [{description: 'no data available',
+            targetValue: 0,
+            actualValue: 0,
+            bonus: 0}] };
       }
     }
   }
-    
+
   goBack(): void {
     this.location.back();
   }
-
 
 }

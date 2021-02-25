@@ -1,7 +1,7 @@
 import { Salesman } from './salesmen/salesman';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -19,6 +19,4 @@ export class SalesmanService {
   /** GET Salesman from the server */
     return this.http.get<Salesman[]>(this.salesmanUrl);
   }
-    
-  
 }

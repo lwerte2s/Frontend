@@ -59,7 +59,7 @@ export class OrdersComponent implements OnChanges {
     this.recordService.uploadBonusToOHRM(this.ohrmId, this.record.year, this.computeTotalBonus())
       .subscribe(res => {
         console.log(res);
-        (res.hasOwnProperty('success')) ? alert("Saved successfully!") : alert("Something went wrong.");
+        (res.hasOwnProperty('success')) ? alert('Saved successfully!') : alert('Something went wrong.');
       });
   }
 

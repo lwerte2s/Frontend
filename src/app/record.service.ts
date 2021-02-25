@@ -1,19 +1,19 @@
 import { Order } from './orders/order';
 import { Record } from './records/record';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecordService {
 
-  private _recordsUrl = 'http://localhost:3000/evaluationRecord/'
-  private _toOpenCRXUrl = 'http://localhost:3000/external/opencrx/'
-  private _toOHRMUrl = 'http://localhost:3000/external/orangehrm/'
+  private _recordsUrl = 'http://localhost:3000/evaluationRecord/';
+  private _toOpenCRXUrl = 'http://localhost:3000/external/opencrx/';
+  private _toOHRMUrl = 'http://localhost:3000/external/orangehrm/';
 
-  constructor(private http: HttpClient,) { }
+  constructor( private http: HttpClient ) { }
 
   getEvaluationRecords(salesmanId: string): Observable<Record[]> {
     return this.http.get<Record[]>(this._recordsUrl + salesmanId);
@@ -30,7 +30,7 @@ export class RecordService {
   }
 
 
-  uploadBonusToOHRM(ohrmId: number, year: number, bonus: number): Observable<Object> {
-    return this.http.post(this._toOHRMUrl + `${ohrmId}/bonussalary`, { value: bonus, year: year })
+  uploadBonusToOHRM(ohrmId: number, year: number, bonus: number): Observable<object> {
+    return this.http.post(this._toOHRMUrl + `${ohrmId}/bonussalary`, { value: bonus, year: year });
   }
 }

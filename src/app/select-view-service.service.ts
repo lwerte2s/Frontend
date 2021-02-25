@@ -1,4 +1,3 @@
-import { AppRoutingModule } from './app-routing.module';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,15 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class SelectViewServiceService {
 
-  private selectetView = "salesman-view";
+  private selectedView = 'salesman-view';
 
   constructor() { }
 
-  getSelectedView():string {
-    return this.selectetView;
+  getSelectedView(): string {
+    return this.selectedView;
   }
 
   changeSelectedView(view: string): void {
-    this.selectetView = view;
+    this.selectedView = view;
   }
 }
